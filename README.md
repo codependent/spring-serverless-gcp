@@ -15,5 +15,6 @@ gcloud functions deploy spring-serverless-gcp \
 --source target/deploy \
 --memory 512MB
 
-curl -X POST https://us-central1-PROJECT-ID.cloudfunctions.net/spring-serverless-gcp -d 'Hello'
+curl -X POST https://us-central1-PROJECT-ID.cloudfunctions.net/spring-serverless-gcp -d 'Hello' -H "Authorization: bearer $(gcloud auth print-identity-token)"
+
 ```
